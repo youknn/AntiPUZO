@@ -1,0 +1,11 @@
+key = "sessionkeys"
+cpt = "" # токен кб
+ct = False
+mk = False
+hs = "hash123"
+at = "admin_tg" #adm tg 
+al = "admin" # adm nick
+ap = "password123456" # adm pas
+ab = 1000.0 #adm start bal
+aac = 5
+ar = "none"
