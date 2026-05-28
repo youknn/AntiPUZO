@@ -9,9 +9,7 @@ import config
 app = Quart(__name__)
 app.secret_key = config.key
 
-cc = AioCryptoPay(
-    token=config.cpt,
-    network=Networks.TEST_NET if config.ct else Networks.MAIN_NET
+cc = None
 )
 
 def gfd(d):
@@ -58,6 +56,11 @@ async def fp(d, r, ui):
 
 @app.before_serving
 async def ini():
+    global cc
+    cc = AioCryptoPay(
+        token=config.cpt,
+        network=Networks.TEST_NET if config.ct else Networks.MAIN_NET
+    )
     os.makedirs("static", exist_ok=True)
     os.makedirs("assets", exist_ok=True)
     os.makedirs("static/files", exist_ok=True)
